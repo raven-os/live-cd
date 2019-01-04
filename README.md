@@ -34,9 +34,9 @@ dd if=/path/to/raven-os.iso of=/dev/sdx
 
 Where `sdx` is the device you want to burn the iso on.
 
-The computer can be booted from the selected device by tweaking some BIOS/UEFI settings, commonly reffered as the boot order. You want to make sure the device will be the first loaded, before the main hard drive. See your motherboard's manual for more details.
+The computer can be booted from the selected device by tweaking some BIOS/UEFI settings, commonly referred to as the boot order. You want to make sure the device will be the first loaded, before the main hard drive. See your motherboard's manual for more details.
 
-When the Raven-OS menu appears, select the "Live" if you want to try Raven-OS, or "Graphical Install" or "Textual Install" if you want to install Raven-OS on your system.
+When the Raven-OS menu appears, select the "Live" entry if you want to try Raven-OS, or "Graphical Install" or "Manual Install" if you want to install Raven-OS on your system.
 
 # Trying the ISO
 
