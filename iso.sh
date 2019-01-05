@@ -126,7 +126,7 @@ function make_iso() {
 
     sync
 
-    # Move the iso to it's final destination
+    # Move the iso to its final destination
     mv "$build_iso" "$final_iso"
 }
 

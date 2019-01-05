@@ -26,7 +26,7 @@ If the script succeeds, the message `Done. The iso is located at "/path/to/raven
 
 ## Trying Raven-OS on real hardware
 
-The iso can be burned on an external device (like an USB flash drive or an optical disk) using `dd`:
+The iso can be burned on an external device (like a USB flash drive or an optical disk) using `dd`:
 
 ```bash
 dd if=/path/to/raven-os.iso of=/dev/sdx
