@@ -69,15 +69,17 @@ EOF
 function make_iso() {
     dd if=/dev/zero of="$build_iso" count=300 bs=1048576
 
-    # Create two partitions:
-    #  * EFI system partition (EF00), 50MiB in size
+    # Create three partitions:
+    #  * EFI system partition, 50MiB in size
+    #  * BIOS boot partition, 1MiB in size
     #  * Linux partition, filling the remaining space
     parted --script "$build_iso" \
-        mklabel msdos \
-        mkpart p fat32 1 50MiB \
-        mkpart p ext2 50MiB 100% \
+        mklabel gpt \
+        mkpart "EFI" fat32 1 50MiB \
+        mkpart "BIOS" 50MiB 51MiB \
+        mkpart "Linux" ext2 51MiB 100% \
         set 1 esp on \
-        set 2 boot on
+        set 2 bios_grub on
 
     sync
 
@@ -86,14 +88,14 @@ function make_iso() {
     declare device_list=$(losetup -ln)
     declare device="$(echo $device_list | grep "$build_iso" | awk '{print $1}' | head -n 1)"
     declare partition_efi=${device}p1
-    declare partition_linux=${device}p2
+    declare partition_linux=${device}p3
 
     echo "Device: $device"
     echo "Partition EFI: $partition_efi"
     echo "Partition Linux: $partition_linux"
 
     # Create and mount the partitions
-    mkfs.fat -F32 "$partition_efi" && sync
+    mkfs.fat -F16 "$partition_efi" && sync
     mkfs.ext2 "$partition_linux" && sync
 
     mount -t vfat "$partition_efi" "$mnt_efi"
