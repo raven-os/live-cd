@@ -95,7 +95,7 @@ function make_iso() {
     echo "Partition Linux: $partition_linux"
 
     # Create and mount the partitions
-    mkfs.fat -F16 "$partition_efi" && sync
+    mkfs.fat -F32 "$partition_efi" && sync
     mkfs.ext2 "$partition_linux" && sync
 
     mount -t vfat "$partition_efi" "$mnt_efi"
