@@ -1,0 +1,34 @@
+desktop-image: "/boot/grub/themes/raven-os/splash.png"
+
+title-text: ""
+
+# Title
++ label {
+        top = 32%
+        left = 0
+        width = 100%
+        height = 35
+        color = "#ffffff"
+        align = "center"
+        text = "Raven-OS Live Boot Menu"
+}
+
+# Boot menu & entries
++ boot_menu {
+        left = 20%
+        width = 60%
+        top = 32%+35
+        height = 33%
+
+        item_height = 44
+        item_color = "#ffffff"
+        item_icon_space = 0
+        item_spacing = 6
+        item_padding = 0
+
+        selected_item_color= "#ffffff"
+        selected_item_pixmap_style = "select_*.png"
+
+        icon_padding = 0
+        icon_width = 15
+}

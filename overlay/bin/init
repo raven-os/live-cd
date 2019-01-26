@@ -1,0 +1,40 @@
+#!/bin/bash
+# Hackish script until we have a proper init like systemd
+
+mount -t proc none /proc
+mount -t sysfs none /sys
+mount -o remount,rw /
+
+hostname raven-os
+
+export HOME=/root
+
+while :; do
+    clear
+
+    echo "                     WKX                    "
+    echo "                    NklkNW                  "
+    echo "               WN0ko:';x00kxxk0NW           "
+    echo "              Xx:'....,,,'..,cx0NW          "
+    echo "             Kc...............',:okXW       "
+    echo "             O,........'''''.....'cxXW      "
+    echo "             Kc.....,cx0KKK0kl,...c0W       "
+    echo "             Nd'...'oX       Nd'..'lX       "
+    echo "             No....'oX       Wx'...;0       "
+    echo "      WX0O0NXd,.....,lkKKXXKOd;....c0       "
+    echo "    NOo;'.';;..........',,,'......:kW       "
+    echo "    kl:,'..'...................':dKW        "
+    echo "    WWNX0O0Od,.................,dN          "
+    echo "            Wk,.......;oxxxo;...;kW         "
+    echo "             K:......'dN   W0:...cK         "
+    echo "             O;......'oXWW  WO;..,xN        "
+    echo "            Wx'.......,cdkXW Wx,..:0W       "
+    echo "            Wk,.....,lxkk0N   Nd'.'c0NW     "
+    echo "             Nd'.....:x0XNW    NOl,',lkKNW  "
+    echo "              Nk:..;clldx0W      WXOxddxOKNW"
+    echo "               WXd;c0WWWW               WW  "
+    echo "                 WOo0W                      "
+    echo "                  WXN                       "
+
+    bash
+done
