@@ -8,17 +8,17 @@ The following commands are used by `iso.sh`:
   * [`nest`](https://github.com/raven-os/nest) (You don't need to be on Raven-OS, but to have compiled Nest and made it available in your `$PATH`).
   * `parted`
   * `mkfs.fat`
-  * `mkfs.ext2`
+  * `mkfs.ext4`
   * `losetup`
   * `grub-install` or `grub2-install`, with grub 2.02 (Check with `grub-install --version`)
 
 ## Running
 
-To make the iso, you can simply run `./iso.sh`.
+To make the iso, you can simply run `./build.sh`.
 Be careful, the script needs to be run as `root`.
 
 ```bash
-root $ ./iso.sh
+root $ ./build.sh
 ```
 
 If the script succeeds, the message `Done. The iso is located at "/path/to/raven-os.iso".` is displayed.
@@ -38,9 +38,13 @@ The computer can be booted from the selected device by tweaking some BIOS/UEFI s
 
 When the Raven-OS menu appears, select the "Live" entry if you want to try Raven-OS, or "Graphical Install" or "Manual Install" if you want to install Raven-OS on your system.
 
-# Trying the ISO
+# Trying the ISO on QEMU
 
 You can also try Raven-OS through a virtual machine, like QEMU, VirtualBox or VMWare.
+
+```bash
+qemu-system-x86_64 --enable-kvm -m 2G -vga virtio raven-os.iso
+```
 
 Example with QEMU:
 
